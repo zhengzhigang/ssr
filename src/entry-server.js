@@ -4,7 +4,6 @@ export default context => {
     // 因为有可能是异步路由钩子函数或组件,所以我们将返回一个Promise,以便服务器能够等待所有的内容在渲染前,就已经准备就绪
     return new Promise((resolve, reject) => {
         const {app, router, store} = createApp()
-        console.log('*******', context)
         // 设置服务端router的位置
         router.push(context.url)
         // 等待router将可能得异步组件和钩子函数解析完
